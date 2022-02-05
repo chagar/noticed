@@ -109,7 +109,7 @@ module Noticed
       def cert_path
         option = options[:cert_path]
         case option
-        when String
+        when String, StringIO, File
           option
         when Symbol
           notification.send(option)
